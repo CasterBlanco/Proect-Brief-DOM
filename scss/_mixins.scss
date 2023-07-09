@@ -1,0 +1,135 @@
+@use 'variables';
+@use 'colors';
+
+@mixin paragraphs-navBar(){
+    font-family: variables.$Main-font;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+@mixin article-delete-icon(){
+    position: absolute;
+    color: colors.$Fourth-color;
+}
+
+@mixin article-whiteBG(){
+    position: absolute;
+    background-color: colors.$Primary-color;
+}
+
+@mixin article-text(){
+    background-color: colors.$Primary-color;
+    color: colors.$Font1-color;
+    font-family: variables.$Main-font;
+    padding: 2px;
+    text-align: start;
+    position: absolute;
+    width: 280px;
+    height: 78px;
+    font-family: variables.$Main-font;
+    font-style: variables.$Font-styling;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+@mixin article-check-icon(){
+    position: absolute;
+    color: colors.$Font1-color;
+}
+
+@mixin article-date(){
+    position: absolute;
+    border: 1px solid colors.$Fourth-color;
+    color: colors.$Fourth-color;
+    border-radius: 40px;
+    font-style: variables.$Font-styling;
+    text-align: center;
+    line-height: 130%;
+    padding: 4px 10px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+@mixin article-heart(){
+    position: absolute;
+    transition: all 0,3s ease-in-out !important;
+    color: colors.$Third-color;
+    cursor: pointer;
+}
+
+@mixin article-views(){
+    position: absolute;
+    color: colors.$Fourth-color;
+    font-style: variables.$Font-styling;
+    line-height: 130%;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: variables.$Main-font;
+}
+
+@mixin paragraph-footer-navBar(){
+    height: 16px;
+    width: 68px;
+    left: 0px;
+    top: 0px;
+    border-radius: nullpx;
+    font-family: variables.$Main-font;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    font-style: variables.$Font-styling;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.03em;
+    color: colors.$Primary-color;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+@mixin footer-imgCircle-card(){
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;   
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: colors.$NavBar-color;
+}
+
+@mixin footer-image-icon(){
+    
+    font-size: 18px;
+    height: 18px;
+    vertical-align: middle;
+    color: colors.$Primary-color;
+}
+
+@mixin image (){
+    display: flex;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+}
+
+@mixin article-grayline(){
+    position: absolute;
+    height: 0px;
+    border: 0.5px solid colors.$Fourth-color;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}

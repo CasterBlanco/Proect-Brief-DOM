@@ -1,0 +1,1768 @@
+@use 'colors';
+@use 'variables';
+@use 'mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.news:hover .overlay {
+    transition: all 1s ease-in-out !important;
+    background: linear-gradient(180deg, colors.$NavBar-color 0%, rgba(93, 98, 116, 0) 100.0% );
+    pointer-events: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    left: 0;
+    top: 0;
+}
+
+
+@media only screen and (min-width: 321px) {
+
+    .mobile{
+        display: none;
+    }
+
+    .container {
+        
+        width: 100vw;
+        height: 100vh;
+
+        width: 1200px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows:84px 365px 365px  365px 274px ;
+
+        gap: 20px;
+    }
+
+   
+
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        
+    }
+
+    .footer {
+        grid-column: 1 / span 3;
+    }
+
+    .header {
+    background-color: colors.$NavBar-color;
+    p {
+        display: inline;
+        bottom: 40px;
+    }
+    }
+
+    .paragraphs  {
+        margin-top: 30px;
+    }
+
+    .logo {
+        color: colors.$Font2-color;
+        position: absolute;
+        width: 76px;
+        height: 17px;
+        left: 80px;
+        top: 33px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.1em;
+    }
+
+    .paragraph-1  {
+        color: colors.$Font2-color;
+        margin-left: 40%;
+        text-decoration-line: underline;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .paragraph-2  {
+        color: colors.$Primary-color;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .paragraph-3  {
+        color: colors.$Primary-color;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .paragraph-4  {
+        color: colors.$Primary-color;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .paragraph-5  {
+        color: colors.$Primary-color;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .paragraph-6  {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 20px;
+        gap: 5px;
+        width: 88px;
+        height: 48px;
+        border: 1px solid colors.$Toggle-color;
+        border-radius: 40px;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        font-size: 16px;
+        color: colors.$Toggle-color;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .news {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: none;
+        display: flex;
+        box-shadow: 5px  5px 15px -3px rgba($color: colors.$Primary-color, $alpha: 1.0);
+        background-color: colors.$Primary-color;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .news h3 {
+        margin: 10px  20px 0px 20px;
+        align-items: center;
+        display: flex;
+        
+    }
+
+    .article {
+        position: relative;
+    }
+
+    .news .image {
+        overflow: hidden;
+        height: 250px;
+        width: 320px;
+        object-fit: contain;
+        border-radius: 10px !important;
+    }
+
+    .article .delete-icon{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article .white-background{
+        top: 70%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article .text {
+        top: 75%;
+        @include mixins.article-text()
+    }
+
+
+    .article .grayline{
+        width: 280px;
+        top: 110%;
+        left: 5.5%;
+        @include mixins.article-grayline()
+    }
+
+    .article .date{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .heart {
+        background-image: url(../image/heart.svg);
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 115%;
+        left: 75%;
+    }
+
+    .heart:hover {
+        background-image: url(../image/heart-outline.svg);
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .heart.on {
+        background-image: url(../image/heart-solid.svg);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+    }
+
+    .check-icon {
+        top: 73%;
+        left: 6%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article .views {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .article-2 {
+        position: relative;
+    }
+
+    .article-2 .delete-icon-2{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-2 .white-background-2{
+        top: 82%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-2 .text-2 {
+        left: 3%;
+        top: 78%;
+        @include mixins.article-text()
+    }
+
+    .article-2 .grayline-2{
+        top: 110%;
+        left: 5.5%;
+        width: 280px;
+        top: 110%;
+        @include mixins.article-grayline()
+    }
+
+    .article-2 .date-2{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-2 .check-icon{
+        left: 3%;
+        top: 88%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-2 .views-2 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .article-3 {
+        position: relative;
+    }
+
+    .article-3 .delete-icon-3{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-3 .check-icon{
+        left: 5%;
+        top: 72%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+
+    }
+
+    .article-3 .white-background-3{
+        top: 65%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-3 .text-3 {
+    top: 70%;
+        @include mixins.article-text()
+    }
+
+    .article-3 .grayline-3{
+        top: 110%;
+        width: 280px;
+        top: 110%;
+        left: 5.5%;
+        @include mixins.article-grayline()
+    }
+
+    .article-3 .date-3{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-3 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-3 .views-3 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+    
+    .article-4 {
+        position: relative;
+    }
+
+    .article-4 .delete-icon-4{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-4 .check-icon{
+        left: 6%;
+        top: 71%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+
+    }
+
+    .article-4 .white-background-4{
+        top: 65%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-4 .text-4 {
+    top: 73%;
+        @include mixins.article-text()
+    }
+
+    .article-4 .grayline-4{
+        top: 110%;
+        left: 5.5%;
+        width: 280px;
+        @include mixins.article-grayline()
+    }
+
+    .article-4 .date-4{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-4 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-4 .views-4 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+    
+    .article-5 {
+        position: relative;
+    }
+
+    .article-5 .delete-icon-5{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-5 .check-icon{
+        left: 6%;
+        top: 82%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-5 .white-background-5{
+        top: 78%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-5 .text-5 {
+        top: 78%;
+        @include mixins.article-text()
+    }
+
+    .article-5 .grayline-5{
+        top: 110%;
+        left: 5.5%;
+        width: 290px;
+        @include mixins.article-grayline()
+    }
+
+    .article-5 .date-5{
+        left: 5.5%;
+        top: 114%; 
+        @include mixins.article-date()
+    }
+
+    .article-5 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-5 .views-5 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .article-6 {
+        position: relative;
+    }
+
+    .article-6 .delete-icon-6{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-6 .check-icon{
+        left: 6%;
+        top: 71%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+
+    }
+
+    .article-6 .white-background-6{
+        top: 65%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-6 .text-6 {
+    top: 73%;
+        @include mixins.article-text()
+    }
+
+    .article-6 .grayline-6{
+        top: 110%;
+        left: 5.5%;
+        width: 290px;
+        @include mixins.article-grayline()
+    }
+
+    .article-6 .date-6{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-6 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-6 .views-6 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .article-7 {
+        position: relative;
+    }
+
+    .article-7 .delete-icon-7{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-7 .check-icon{
+        left: 6%;
+        top: 93%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-7 .white-background-7{
+        top: 87%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-7 .text-7 {
+        top: 85%;
+        @include mixins.article-text()
+    }
+
+    .article-7 .grayline-7{
+        top: 110%;
+        left: 5.5%;
+        width: 290px;
+        @include mixins.article-grayline()
+    }
+
+    .article-7 .date-7{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-7 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-7 .views-7 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .article-8 {
+        position: relative;
+    }
+
+    .article-8 .delete-icon-8{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-8 .check-icon{
+        left: 6%;
+        top: 71%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+
+    }
+
+    .article-8 .white-background-8{
+        top: 68%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-8 .text-8 {
+    top: 73%;
+        @include mixins.article-text()
+    }
+
+    .article-8 .grayline-8{
+        top: 110%;
+        left: 5.5%;
+        width: 290px;
+        @include mixins.article-grayline()
+    }
+
+    .article-8 .date-8{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-8 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-8 .views-8 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .article-9 {
+        position: relative;
+    }
+
+    .article-9 .delete-icon-9{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-9 .check-icon{
+        left: 6%;
+        top: 75%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+
+    }
+
+    .article-9 .white-background-9{
+        top: 70%;
+        width: 325px;
+        height: 172px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-9 .text-9 {
+    top: 73%;
+        @include mixins.article-text()
+    }
+
+    .article-9 .grayline-9{
+        top: 110%;
+        left: 5.5%;
+        width: 290px;
+        @include mixins.article-grayline()
+    }
+
+    .article-9 .date-9{
+        left: 5.5%;
+        top: 114%;
+        @include mixins.article-date()
+    }
+
+    .article-9 .heart {
+        top: 115%;
+        left: 75%;
+        @include mixins.article-heart()
+    }
+
+    .article-9 .views-9 {
+        top: 116%;
+        left: 82%;
+        @include mixins.article-views()
+    }
+
+    .footer {
+        position: relative;
+        background-color: colors.$Font1-color;
+    }
+
+    .paragraph-footer-blogFollow{
+        padding-top: 60px;
+        padding-left: 80px;
+        p {
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-blog {
+        width: 43px;
+        height: 21px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+        color: colors.$Font2-color;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .paragraph-footer-follow {
+        width: 53px;
+        height: 16px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+        color: colors.$Primary-color;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        padding-top: 60px;
+        padding-left: 720px;
+    }
+
+    .paragraph-footer {
+        margin-top: 20px;
+        p  {
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-2{
+        padding-left: 80px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-3{
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-4{
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-5{
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-6{
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-7{
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-8{
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .footer .circle{
+        margin-left: 835px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-linkedin-in {
+        margin-top: 5px;
+        margin-left: 7.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-2{
+        margin-left: 880px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-instagram{
+        margin-top: 6px;
+        margin-left: 7.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-3{
+        margin-left: 925px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-facebook-f{
+        margin-top: 7px;
+        margin-left: 8px;
+        font-size: 20px;
+        height: 25px;
+        vertical-align: middle;
+        color: colors.$Primary-color;
+    }
+
+    .footer .circle-4{
+        margin-left: 970px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-twitter{
+        margin-top: 5px;
+        margin-left: 7px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-5{
+        margin-left: 1015px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-viber{
+        margin-top: 6px;
+        margin-left: 6.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-6{
+        margin-left: 1060px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-tiktok{
+        margin-top: 6px;
+        margin-left: 6.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-7{
+        margin-left: 1105px;
+        margin-top: 86px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-youtube{
+        margin-top: 6px;
+        margin-left: 5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .paragraph-footer-Courses {
+        width: 113px;
+        height: 21px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 130%;
+        letter-spacing: -0.02em;
+        color: colors.$Primary-color;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        padding-left: 80px;
+        margin-top: 40px;
+    }
+
+    .paragraph-footer2 {
+        margin-top: 20px;
+        p {
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-data {
+        padding-left: 80px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-web {
+        padding-left: 20px;
+        @include mixins.paragraph-footer-navBar()
+    }
+
+    .paragraph-footer-privacy {
+        padding-left: 685px;
+        height: 16px;
+        width: 74px;
+        height: 16px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        letter-spacing: -0.03em;
+        color: colors.$Primary-color;
+        opacity: 0.4;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .paragraph-footer-dot {
+        padding-left: 10px;
+        height: 16px;
+        width: 74px;
+        height: 16px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        letter-spacing: -0.03em;
+        color: colors.$Primary-color;
+        opacity: 0.4;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .paragraph-footer-term {
+        padding-left: 10px;
+        height: 16px;
+        width: 74px;
+        height: 16px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 130%;
+        letter-spacing: -0.03em;
+        color: colors.$Primary-color;
+        opacity: 0.4;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+}
+
+@media only screen and (max-width: 320px) {
+    .laptop{
+        display: none;
+    }
+
+    .news:hover .overlay {
+        transition: all 1s ease-in-out !important;
+        background: linear-gradient(180deg, colors.$NavBar-color 0%, rgba(25, 33, 64, 0) 70.0% );
+        pointer-events: none;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        left: 0;
+        top: 0;
+    }
+
+    .container {
+        
+        width: 100vw;
+        height: 100vh;
+
+        width: 320px;
+        
+
+        display: grid;
+        grid-template-rows:94px 320px 320px 320px 320px 320px 320px 320px 320px 320px 429px ;
+
+        gap: 10px;
+    }
+
+    .news {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: none;
+        display: flex;
+        box-shadow: 5px  5px 15px -3px rgba($color: colors.$Primary-color, $alpha: 1.0);
+        background-color: colors.$Primary-color;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+
+    .image {
+        width: 290px;
+        border-radius: 6px;
+        @include mixins.image()  
+    }
+
+    .header{
+        background-color: colors.$NavBar-color;
+    }
+
+
+    .logo{
+        color: colors.$Font2-color;
+        position: absolute;
+        width: 76px;
+        height: 17px;
+        left: 25px;
+        top: 55px;
+        font-family: variables.$Main-font;
+        font-style: variables.$Font-styling;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.1em;
+    }
+
+    .fa-bars{
+        color: colors.$Toggle-color;
+    }
+
+    .burger-menu{
+        position: absolute;
+        top: 45px;
+        left: 82%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 20px;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        border: 1px solid colors.$Toggle-color;
+        border-radius: 40px;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        font-size: 16px;
+        color: colors.$Toggle-color;
+        @include mixins.paragraphs-navBar()
+    }
+
+    .heart {
+        background-image: url(../image/heart.svg);
+        background-repeat: no-repeat;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+
+    }
+
+    .heart:hover {
+        background-image: url(../image/heart-outline.svg);
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+    .heart.on {
+        background-image: url(../image/heart-solid.svg);
+        background-repeat: no-repeat;
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+    } 
+
+    .article {
+        position: relative;
+    }
+
+    .article .delete-icon{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article .check-icon{
+        top: 63%;
+        left: 4%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article .white-background{
+        top: 60%;;
+        width: 290px;
+        height: 151px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article .text {
+        top: 68%;
+        left: 4%;
+        @include mixins.article-text()
+    }
+
+    .article .grayline{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 4%;
+        @include mixins.article-grayline()
+    }
+
+    .article .date{
+        margin-left: -40%;
+        margin-top: 8%;
+        @include mixins.article-date()
+    }
+
+    .article .heart {
+        margin-left: 72%;
+        margin-top: 8%;
+        @include mixins.article-heart()
+    }
+
+    .article .views {
+        margin-left: 30%;
+        margin-top: 8%;
+        @include mixins.article-views()
+    }
+
+    
+    .article-2 {
+        position: relative;
+    }
+
+    .article-2 .delete-icon-2{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-2 .white-background-2{
+        top: 82%;
+        width: 290px;
+        height: 110px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-2 .text-2 {
+        top: 85%;
+        left: 8%;
+        @include mixins.article-text()
+    }
+
+    .article-2 .check-icon{
+        top: 87%;
+        left: 2%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-2 .grayline-2{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 7%;
+        @include mixins.article-grayline()
+    }
+
+    .article-2 .date-2{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-2 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-2 .views-2 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    
+    .article-3 {
+        position: relative;
+    }
+
+    .article-3 .delete-icon-3{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-3 .check-icon{
+        top: 63%;
+        left: 4%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-3 .white-background-3  {
+        top: 60%;
+        width: 290px;
+        height: 151px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-3 .text-3 {
+        top: 68%;
+        left: 4%;
+        @include mixins.article-text()
+    }
+
+    .article-3 .grayline-3{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 5%;
+        @include mixins.article-grayline()
+    }
+
+    .article-3 .date-3{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-3 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-3 .views-3 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    .article-4 {
+        position: relative;
+    }
+
+    .article-4 .delete-icon-4{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-4 .check-icon{
+        top: 63%;
+        left: 4%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-4 .white-background-4  {
+        top: 60%;
+        width: 290px;
+        height: 151px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-4 .text-4 {
+        top: 68%;
+        left: 4%;
+        @include mixins.article-text()
+    }
+
+    .article-4 .grayline-4{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 5%;
+        @include mixins.article-grayline()
+    }
+
+    .article-4 .date-4{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-4 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-4 .views-4 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    .article-5 {
+        position: relative;
+    }
+
+    .article-5 .delete-icon-5{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-5 .white-background-5{
+        top: 82%;
+        width: 290px;
+        height: 110px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-5 .text-5 {
+        top: 85%;
+        left: 8%;
+        @include mixins.article-text()
+    }
+
+    .article-5 .check-icon{
+        top: 87%;
+        left: 2%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-5 .grayline-5{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 7%;
+        @include mixins.article-grayline()
+    }
+
+    .article-5 .date-5{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-5 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-5 .views-5 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    .article-6 {
+        position: relative;
+    }
+
+    .article-6 .delete-icon-6{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-6 .check-icon{
+        top: 74%;
+        left: 2%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-6 .white-background-6  {
+        top: 70%;
+        width: 290px;
+        height: 121px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-6 .text-6 {
+        top: 72%;
+        left: 8%;
+        @include mixins.article-text()
+    }
+
+    .article-6 .grayline-6{
+        width: 250px;
+        margin-left: 4%;
+        margin-top: 6%;
+        @include mixins.article-grayline()
+    }
+
+    .article-6 .date-6{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-6 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-6 .views-6 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    .article-7 {
+        position: relative;
+    }
+
+    .article-7 .delete-icon-7{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-7 .white-background-7{
+        top: 90%;
+        width: 290px;
+        height: 83px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-7 .text-7 {
+        top: 93%;
+        left: 9%;
+        @include mixins.article-text()
+    }
+
+    .article-7 .check-icon{
+        top: 95%;
+        left: 2%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-7 .grayline-7{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 6%;
+        @include mixins.article-grayline()
+    }
+
+    .article-7 .date-7{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-7 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-7 .views-7 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    .article-8 {
+        position: relative;
+    }
+
+    .article-8 .delete-icon-8{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-8 .check-icon{
+        top: 74%;
+        left: 2%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-8 .white-background-8  {
+        top: 70%;
+        width: 290px;
+        height: 121px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-8 .text-8 {
+        top: 72%;
+        left: 8%;
+        @include mixins.article-text()
+    }
+
+    .article-8 .grayline-8{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 6%;
+        @include mixins.article-grayline()
+    }
+
+    .article-8 .date-8{
+        margin-left: -40%;
+        margin-top: 10%;
+        @include mixins.article-date()
+    }
+
+    .article-8 .heart {
+        margin-left: 72%;
+        margin-top: 10%;
+        @include mixins.article-heart()
+    }
+
+    .article-8 .views-8 {
+        margin-left: 30%;
+        margin-top: 10%;
+        @include mixins.article-views()
+    }
+
+    .article-9 {
+        position: relative;
+    }
+
+    .article-9 .delete-icon-9{
+        left: 90%;
+        top: 7%;
+        @include mixins.article-delete-icon()
+    }
+
+    .article-9 .check-icon{
+        top: 63%;
+        left: 4%;
+        visibility: hidden;
+        @include mixins.article-check-icon()
+    }
+
+    .article-9 .white-background-9{
+        top: 60%;
+        width: 290px;
+        height: 151px;
+        @include mixins.article-whiteBG()
+    }
+
+    .article-9 .text-9 {
+        top: 68%;
+        left: 4%;
+        @include mixins.article-text()
+    }
+
+    .article-9 .grayline-9{
+        width: 250px;
+        margin-left: 6%;
+        margin-top: 4%;
+        @include mixins.article-grayline()
+    }
+
+    .article-9 .date-9{
+        margin-left: -40%;
+        margin-top: 8%;
+        @include mixins.article-date()
+    }
+
+    .article-9 .heart {
+        margin-left: 72%;
+        margin-top: 8%;
+        @include mixins.article-heart()
+    }
+
+    .article-9 .views-9 {
+        margin-left: 30%;
+        margin-top: 8%;
+        @include mixins.article-views()
+    }
+
+    .footer {
+        position: relative;
+        background-color: colors.$Font1-color;
+    }
+
+    .footer .paragraph-footer-blog{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        size: 24px;
+        position: absolute;
+        margin-left: 10%;
+        margin-top: 15%;
+    }
+
+    .footer .paragraph-footer-a{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        font-size: variables.$Font-styling2;
+        margin-left: 0%;
+        margin-top: 25%;
+        p{
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-3{
+        padding-left: 10px;
+    }
+
+    .footer .paragraph-footer-b{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        font-size: variables.$Font-styling2;
+        
+        margin-left: 10%;
+        margin-top: 5%;
+        p{
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-5{
+        padding-left: 10px;
+    }
+
+    .paragraph-footer-6{
+        padding-left: 10px;
+    }
+
+    .footer .paragraph-footer-c{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        font-size: variables.$Font-styling2;
+        margin-left: 10%;
+        margin-top: 5%;
+        p{
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-8{
+        padding-left: 10px;
+    }
+
+    .paragraph-footer-Courses{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        size: 24px;
+        position: absolute;
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+
+  .paragraph-footer-2{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        font-size: variables.$Font-styling2;
+        margin-left: 10%;
+        margin-top: 20%;
+        p{
+            display: inline;
+        }
+    }
+
+    .paragraph-footer-web{
+        padding-left: 10px;
+    }
+
+    .footer .paragraph-footer-follow{
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        font-weight: lighter;
+        margin-left: 10%;
+        margin-top: 10%;
+        font-style: variables.$Font-styling;
+        line-height: 130%;
+        letter-spacing: -0.03em;
+        color: colors.$Primary-color;
+        opacity: 0.4;
+        flex: none;
+        order: 0;
+        flex-grow: 0; 
+        font-weight: 400;
+        font-size: variables.$Font-styling2;
+    }
+
+    .footer .circle{
+        margin-top: 98%;
+        margin-left: 25px;
+        @include mixins.footer-imgCircle-card()
+    }
+    
+    .footer .fa-linkedin-in{
+        margin-top: 5px;
+        margin-left: 7.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-2{
+        margin-top: 98%;
+        margin-left: 65px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-instagram{
+        margin-top: 6px;
+        margin-left: 7.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-3{
+        margin-top: 98%;
+        margin-left: 105px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-facebook-f{
+        margin-top: 7px;
+        margin-left: 8px;
+        font-size: 20px;
+        height: 25px;
+        vertical-align: middle;
+        color: colors.$Primary-color;
+    }
+
+    .footer .circle-4{
+        margin-top: 98%;
+        margin-left: 145px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-twitter{
+        margin-top: 5px;
+        margin-left: 7px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-5{
+        margin-top: 98%;
+        margin-left: 185px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-viber{
+        margin-top: 6px;
+        margin-left: 6.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-6{
+        margin-top: 98%;
+        margin-left: 225px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-tiktok{
+        margin-top: 6px;
+        margin-left: 6.5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .circle-7{
+        margin-top: 98%;
+        margin-left: 265px;
+        @include mixins.footer-imgCircle-card()
+    }
+
+    .fa-youtube{
+        margin-top: 6px;
+        margin-left: 5px;
+        @include mixins.footer-image-icon()
+    }
+
+    .footer .footer-bottom{
+        position: absolute;
+        font-family: variables.$Main-font;
+        color: colors.$Primary-color;
+        size: 9px;
+        margin-left: 10%;
+        margin-top: 25%;
+        font-weight: lighter;
+        font-style: variables.$Font-styling;
+        line-height: 130%;
+        letter-spacing: -0.03em;
+        color: colors.$Primary-color;
+        opacity: 0.4;
+        flex: none;
+        order: 0;
+        flex-grow: 0; 
+        font-weight: 400;
+        font-size: variables.$Font-styling2;
+    }
+        p{
+            display: inline;
+        }
+    
+
+}   
